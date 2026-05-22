@@ -32,20 +32,20 @@ Built with **Node.js**, **Express**, **MongoDB**, and **EJS**, with image hostin
 
 ## Tech Stack
 
-| Layer            | Tools                                                                 |
-| ---------------- | --------------------------------------------------------------------- |
-| Runtime          | Node.js                                                               |
-| Web framework    | Express 5                                                             |
-| Database         | MongoDB Atlas via Mongoose                                            |
-| Templating       | EJS + `ejs-mate` layouts                                              |
-| Auth             | Passport, `passport-local`, `passport-local-mongoose`                 |
-| Sessions         | `express-session` + `connect-mongo`                                   |
-| File uploads     | Multer + `multer-storage-cloudinary` + Cloudinary                     |
-| Validation       | Joi                                                                   |
-| Email            | Nodemailer (Gmail SMTP)                                               |
-| Geocoding        | Photon API (https://photon.komoot.io)                                 |
-| Security         | Helmet, `express-rate-limit`, custom sanitize middleware              |
-| Frontend         | Bootstrap (via EJS templates), custom CSS, vanilla JS                 |
+| Layer         | Tools                                                    |
+| ------------- | -------------------------------------------------------- |
+| Runtime       | Node.js                                                  |
+| Web framework | Express 5                                                |
+| Database      | MongoDB Atlas via Mongoose                               |
+| Templating    | EJS + `ejs-mate` layouts                                 |
+| Auth          | Passport, `passport-local`, `passport-local-mongoose`    |
+| Sessions      | `express-session` + `connect-mongo`                      |
+| File uploads  | Multer + `multer-storage-cloudinary` + Cloudinary        |
+| Validation    | Joi                                                      |
+| Email         | Nodemailer (Gmail SMTP)                                  |
+| Geocoding     | Photon API (https://photon.komoot.io)                    |
+| Security      | Helmet, `express-rate-limit`, custom sanitize middleware |
+| Frontend      | Bootstrap (via EJS templates), custom CSS, vanilla JS    |
 
 ---
 
@@ -150,34 +150,37 @@ node init/index.js
 ## Routes
 
 ### Listings
-| Method | Path                          | Auth        | Description              |
-| ------ | ----------------------------- | ----------- | ------------------------ |
-| GET    | `/listings`                   | public      | Browse + search + filter |
-| GET    | `/listings/new`               | logged in   | Render new-listing form  |
-| POST   | `/listings`                   | logged in   | Create a listing         |
-| GET    | `/listings/:id`               | logged in   | Show one listing         |
-| GET    | `/listings/:id/edit`          | owner only  | Render edit form         |
-| PUT    | `/listings/:id`               | owner only  | Update a listing         |
-| DELETE | `/listings/:id`               | owner only  | Delete a listing         |
+
+| Method | Path                 | Auth       | Description              |
+| ------ | -------------------- | ---------- | ------------------------ |
+| GET    | `/listings`          | public     | Browse + search + filter |
+| GET    | `/listings/new`      | logged in  | Render new-listing form  |
+| POST   | `/listings`          | logged in  | Create a listing         |
+| GET    | `/listings/:id`      | logged in  | Show one listing         |
+| GET    | `/listings/:id/edit` | owner only | Render edit form         |
+| PUT    | `/listings/:id`      | owner only | Update a listing         |
+| DELETE | `/listings/:id`      | owner only | Delete a listing         |
 
 ### Reviews
-| Method | Path                                       | Auth         |
-| ------ | ------------------------------------------ | ------------ |
-| POST   | `/listings/:id/reviews`                    | logged in    |
-| DELETE | `/listings/:id/reviews/:reviewId`          | author only  |
+
+| Method | Path                              | Auth        |
+| ------ | --------------------------------- | ----------- |
+| POST   | `/listings/:id/reviews`           | logged in   |
+| DELETE | `/listings/:id/reviews/:reviewId` | author only |
 
 ### Auth
-| Method | Path             | Description              |
-| ------ | ---------------- | ------------------------ |
-| GET    | `/signup`        | Signup form              |
-| POST   | `/signup`        | Create account           |
-| GET    | `/login`         | Login form               |
-| POST   | `/login`         | Local auth               |
-| POST   | `/logout`        | End session              |
-| GET    | `/forgot`        | Forgot-password form     |
-| POST   | `/forgot`        | Send reset email         |
-| GET    | `/reset/:token`  | Reset-password form      |
-| POST   | `/reset/:token`  | Set new password         |
+
+| Method | Path            | Description          |
+| ------ | --------------- | -------------------- |
+| GET    | `/signup`       | Signup form          |
+| POST   | `/signup`       | Create account       |
+| GET    | `/login`        | Login form           |
+| POST   | `/login`        | Local auth           |
+| POST   | `/logout`       | End session          |
+| GET    | `/forgot`       | Forgot-password form |
+| POST   | `/forgot`       | Send reset email     |
+| GET    | `/reset/:token` | Reset-password form  |
+| POST   | `/reset/:token` | Set new password     |
 
 ---
 
@@ -198,12 +201,6 @@ node init/index.js
   - Generic error messages are returned for 5xx errors
 - `app.set("trust proxy", 1)` is already configured for environments behind a reverse proxy (Render, Heroku, etc.).
 - Sessions are persisted in MongoDB, so the app is safe to scale horizontally.
-
----
-
-## License
-
-ISC
 
 ---
 
