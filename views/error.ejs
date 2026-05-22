@@ -1,0 +1,9 @@
+<% layout("/layouts/boilerplate") %>
+<div class="error-wrapper">
+  <div class="error-card">
+    <i class="fa-regular fa-circle-xmark error-icon"></i>
+    <h2 class="error-title">Something went wrong</h2>
+    <p class="error-message"><%= err.message %></p>
+    <a href="/listings" class="btn error-btn">Back to listings</a>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<% layout("/layouts/boilerplate") %>
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h2 class="auth-title">Set a new password</h2>
+    <p class="auth-subtitle">Choose a strong password you haven't used before.</p>
+    <form action="/reset/<%= token %>" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="password" class="form-label">New password</label>
+        <input id="password" name="password" type="password" class="form-control" required minlength="6" autofocus />
+      </div>
+      <button class="btn auth-btn w-100" type="submit">Update password</button>
+    </form>
+  </div>
+</div>

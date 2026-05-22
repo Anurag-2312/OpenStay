@@ -1,0 +1,18 @@
+<% if ((success && success.length) || (error && error.length)) { %>
+  <div class="flash-container">
+    <% if (success && success.length) { %>
+      <div class="flash flash-success" role="alert">
+        <i class="fa-solid fa-circle-check"></i>
+        <span><%= success %></span>
+        <button type="button" class="flash-close" aria-label="Close">&times;</button>
+      </div>
+    <% } %>
+    <% if (error && error.length) { %>
+      <div class="flash flash-error" role="alert">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span><%= error %></span>
+        <button type="button" class="flash-close" aria-label="Close">&times;</button>
+      </div>
+    <% } %>
+  </div>
+<% } %>

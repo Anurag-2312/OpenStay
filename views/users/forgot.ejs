@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerplate") %>
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h2 class="auth-title">Forgot password?</h2>
+    <p class="auth-subtitle">Enter your email and we'll send you a reset link.</p>
+    <form action="/forgot" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" type="email" class="form-control" required autofocus />
+      </div>
+      <button class="btn auth-btn w-100" type="submit">Send reset link</button>
+    </form>
+    <div class="auth-meta">
+      <a href="/login">Back to login</a>
+    </div>
+  </div>
+</div>
