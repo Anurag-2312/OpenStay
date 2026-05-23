@@ -1,6 +1,6 @@
 # OpenStay
 
-OpenStay is a full-stack vacation rental web application inspired by Airbnb. Users can browse property listings, sign up, list their own stays with photos and locations, and leave reviews on places they've visited.
+OpenStay is a full-stack vacation rental web application. Users can browse property listings, sign up, list their own stays with photos and locations, and leave reviews on places they've visited.
 
 Built with **Node.js**, **Express**, **MongoDB**, and **EJS**, with image hosting on **Cloudinary** and geocoding via **Photon (Komoot)**.
 
@@ -127,7 +127,7 @@ PORT=8080
 NODE_ENV=development
 ```
 
-`.env` is already listed in `.gitignore` — do not commit it.
+`.env` is already listed in `.gitignore` - do not commit it.
 
 ### 4. Run the app
 
